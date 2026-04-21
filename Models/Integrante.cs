@@ -38,7 +38,7 @@ public class Integrante
         return descripcion;
     }
     public List<string> ObtenerIntereses(){
-        return Intereses
+        return Intereses;
     }
 
 }

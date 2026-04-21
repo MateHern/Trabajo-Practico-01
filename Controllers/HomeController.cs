@@ -15,6 +15,10 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        Grupo grupo = new Grupo ();
+        List <Integrante> pablo = Grupo.CargaDatosManual();
+        ViewBag.Integrante=pablo;
+
         return View();
     }
 
