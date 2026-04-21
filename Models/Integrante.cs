@@ -22,20 +22,23 @@ public class Integrante
         return nombre;
     }
 
-    public string ObtenerCategoria(){
+    public int ObtenerDni(){
         return categoria;
     }
 
-    public int ObtenerAnio(){
-        return anio;
+    public DateTime ObtenerFechadeNacimiento(){
+        return fechaDeNacimiento;
     }
 
-    public double ObtenerPrecio(){
-        return precio;
+    public string Obtenerfoto(){
+        return foto;
     }
 
-    public string ObtenerDescripcion(){
+    public List<string> ObtenerFamiliares(){
         return descripcion;
+    }
+    public List<string> ObtenerIntereses(){
+        return Intereses
     }
 
 }
