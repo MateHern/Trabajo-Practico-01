@@ -23,7 +23,7 @@ public class Integrante
     }
 
     public int ObtenerDni(){
-        return categoria;
+        return dni;
     }
 
     public DateTime ObtenerFechadeNacimiento(){
@@ -35,7 +35,7 @@ public class Integrante
     }
 
     public List<string> ObtenerFamiliares(){
-        return descripcion;
+        return Familiares;
     }
     public List<string> ObtenerIntereses(){
         return Intereses;
