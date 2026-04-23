@@ -8,9 +8,21 @@ public Grupo()
 {
     CargaDatosManual();
 }
-Dictionary<int, Integrante> mostrarIntegrantes()
+public Dictionary<int, Integrante> mostrarIntegrantes()
 {
     return Integrantes;    
+}
+public Integrante GetIntegrante(int dni)
+{
+    if (Integrantes.ContainsKey(dni))
+    {
+    Integrante integranteBuscado = Integrantes[dni];
+    return integranteBuscado;
+    }else 
+    {
+    return null;
+    }
+
 }
 void CargaDatosManual()
 {    
