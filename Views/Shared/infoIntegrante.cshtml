@@ -1,0 +1,36 @@
+<p>Nombre: @ViewBag.miIntegrante.ObtenerNombre()</p>
+<p>DNI: @ViewBag.miIntegrante.ObtenerDni()</p>
+<p>fecha de nacimiento: @ViewBag.miIntegrante.ObtenerFamiliares()</p>
+<p>familiares:</p>
+@{
+    var integrante = ViewBag.Integrante as Integrante;
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="detalle">
+    <h1>@integrante.Nombre</h1>
+
+    <img src="@integrante.Foto" class="fotoGrande" />
+
+    <p><strong>DNI:</strong> @integrante.DNI</p>
+    <p><strong>Fecha de nacimiento:</strong> @integrante.FechaNacimiento.ToShortDateString()</p>
+
+    <h3>Familiares</h3>
+    <ul>
+        @foreach (var f in integrante.Familiares)
+        {
+            <li>@f</li>
+        }
+    </ul>
+
+    <h3>Intereses</h3>
+    <ul>
+        @foreach (var i in integrante.Intereses)
+        {
+            <li>@i</li>
+        }
+    </ul>
+
+    <a href='@Url.Action("Index", "Home")'>⬅ Volver</a>
+</div>

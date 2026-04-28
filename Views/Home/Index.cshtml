@@ -1,8 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Grupo";
+    var integrantes = ViewBag.Integrantes as Dictionary<int,Integrante>;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="container">
+    <h1 class="titulo">💻 Grupo Programación</h1>
+
+    <div class="grid">
+        @foreach (var item in integrantes.Values)
+        {
+            <div class="card">
+                <img src="@item.Foto" class="foto" />
+                <h2>@item.Nombre</h2>
+
+                <a href='@Url.Action("SelectIntegrante", "Home", new { dni = item.DNI })'>
+                    Ver más
+                </a>
+            </div>
+        }
+    </div>
 </div>
