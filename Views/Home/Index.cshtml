@@ -1,4 +1,4 @@
-﻿@{
+﻿<!-- @{
     ViewData["Title"] = "Grupo";
     var integrantes = ViewBag.Integrantes as Dictionary<int,Integrante>;
 }
@@ -19,6 +19,33 @@
                     Ver más
                 </a>
             </div>
+        }
+    </div>
+</div> -->
+
+@using Tp01.Models
+@{
+    ViewData["Title"] = "Grupo";
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="container">
+    <h1 class="titulo">Grupo </h1>
+
+    <div class="grid">
+        @if (integrantes != null)
+        {
+            @foreach (var item in integrantes.Values)
+            {
+                <div class="card">
+                    <img src="@item.Foto" class="foto" />
+                    <h2>@item.Nombre</h2>
+                    <a href='@Url.Action("SelectIntegrante", "Home", new { dni = item.DNI })'>
+                        Ver más
+                    </a>
+                </div>
+            }
         }
     </div>
 </div>

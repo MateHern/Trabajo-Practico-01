@@ -24,5 +24,5 @@ namespace Tp01.Models
         }
     }
 }
-namespace Tp01;
+
 

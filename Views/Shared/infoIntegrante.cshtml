@@ -1,4 +1,4 @@
-<p>Nombre: @ViewBag.miIntegrante.ObtenerNombre()</p>
+<!-- <p>Nombre: @ViewBag.miIntegrante.ObtenerNombre()</p>
 <p>DNI: @ViewBag.miIntegrante.ObtenerDni()</p>
 <p>fecha de nacimiento: @ViewBag.miIntegrante.ObtenerFamiliares()</p>
 <p>familiares:</p>
@@ -34,3 +34,42 @@
 
     <a href='@Url.Action("Index", "Home")'>⬅ Volver</a>
 </div>
+ -->
+
+
+<!-- @using Tp01.Models
+@{
+    ViewData["Title"] = "Detalle del Integrante";
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+@if (integrante != null)
+{
+    <div class="detalle">
+        <h1>@integrante.Nombre</h1>
+
+        <img src="@integrante.Foto" class="fotoGrande" />
+
+        <p><strong>DNI:</strong> @integrante.DNI</p>
+        <p><strong>Fecha de nacimiento:</strong> @integrante.FechaNacimiento.ToShortDateString()</p>
+
+        <h3>Familiares</h3>
+        <ul>
+            @foreach (var f in integrante.Familiares)
+            {
+                <li>@f</li>
+            }
+        </ul>
+
+        <h3>Intereses</h3>
+        <ul>
+            @foreach (var i in integrante.Intereses)
+            {
+                <li>@i</li>
+            }
+        </ul>
+
+        <a href='@Url.Action("Index", "Home")'>⬅ Volver</a>
+    </div>
+} -->

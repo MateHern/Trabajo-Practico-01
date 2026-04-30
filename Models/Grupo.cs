@@ -1,54 +1,55 @@
-namespace Tp01;
+using System;
+using System.Collections.Generic;
 
-public class Grupo
+namespace Tp01.Models
 {
-    private Dictionary<int, Integrante> Integrantes;
+    public class Grupo
+    {
+        private Dictionary<int, Integrante> Integrantes;
 
-public Grupo()
-{
-    CargaDatosManual();
-}
-public Dictionary<int, Integrante> mostrarIntegrantes()
-{
-    return Integrantes;    
-}
-public Integrante GetIntegrante(int dni)
-{
-    if (Integrantes.ContainsKey(dni))
-    {
-    Integrante integranteBuscado = Integrantes[dni];
-    return integranteBuscado;
-    }else 
-    {
-    return null;
+        public Grupo()
+        {
+            Integrantes = new Dictionary<int, Integrante>();
+            CargaDatosManual();
+        }
+
+        public Dictionary<int, Integrante> mostrarIntegrantes()
+        {
+            return Integrantes;
+        }
+
+        public Integrante GetIntegrante(int dni)
+        {
+            if (Integrantes.ContainsKey(dni))
+            {
+                return Integrantes[dni];
+            }
+            return null;
+        }
+
+        public void CargaDatosManual()
+        {
+            List<string> familiaresDuv = new List<string>();
+            familiaresDuv.Add("Papá: Juan");
+            familiaresDuv.Add("Mamá: Dolores");
+
+            List<string> familiaresHern = new List<string>();
+            familiaresHern.Add("Papá: Rodolfo");
+            familiaresHern.Add("Mamá: Cintia");
+
+            List<string> interesesDuv = new List<string>();
+            interesesDuv.Add("Hacer mandalas");
+            interesesDuv.Add("Hacer yoga");
+
+            List<string> interesesHern = new List<string>();
+            interesesHern.Add("Ser plomero");
+            interesesHern.Add("Cortar leña");
+
+            Integrante integrante1 = new Integrante(49764404, "Matias", new DateTime(2009, 09, 30), "mati12.jpg", familiaresDuv, interesesDuv);
+            Integrante integrante2 = new Integrante(49979691, "Mateo", new DateTime(2009, 12, 13), "Sin título.jpg", familiaresHern, interesesHern);
+
+            Integrantes.Add(49764404, integrante1);
+            Integrantes.Add(49979691, integrante2);
+        }
     }
-
-}
-void CargaDatosManual()
-{    
-   
-    List <string> FamiliaresDuv = new List<string>();
-    FamiliaresDuv.Add("Papá: Juan");
-    FamiliaresDuv.Add("Mamá: Dolores");
-
-    List <string> FamiliaresHern = new List<string>();
-    FamiliaresHern.Add("Papá: Rodolfo");
-    FamiliaresHern.Add("Mamá: Cintia");
-        
-    List <string> InteresesDuv = new List <string>();
-    InteresesDuv.Add("Hacer mandalas");
-    InteresesDuv.Add("Hacer yoga");
-
-    List <string> InteresesHern = new List <string>();
-    InteresesHern.Add("Ser plomero");
-    InteresesHern.Add("Cortar leña");
-
-    Integrante Integreante1 = new Integrante(49764404, "Matias" , new DateTime(2009,09,30), "integrante1.webp", FamiliaresDuv,  InteresesDuv);
-    Integrante Integreante2 = new Integrante(49979691, "Mateo" , new DateTime(2009,12,13), "integrante2.webp", FamiliaresHern,  InteresesHern);
-
-    Integrantes.Add(49764404,Integreante1);
-    Integrantes.Add(49979691,Integreante2);
-
-
-}
 }
