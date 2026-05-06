@@ -1,6 +1,6 @@
 @using Tp01.Models
 @{
-    ViewData["Title"] = "Detalle del Integrante";
+    ViewData["Title"] = "Perfil";
     Integrante integrante = (Integrante)ViewBag.Integrante;
 }
 
@@ -8,22 +8,25 @@
 
 @if (integrante != null)
 {
-    <div class="detalle">
-        <div class="detalle-header">
-            <img src="@integrante.Foto" class="fotoGrande" />
-            <h1>@integrante.Nombre</h1>
+    <div class="pagina">
+        <div class="perfil-header">
+            <img src="@integrante.Foto" class="foto-grande" alt="Foto de @integrante.Nombre" />
+            <div class="perfil-titulo">
+                <h1>@integrante.Nombre</h1>
+                <span class="badge-dni">DNI @integrante.DNI</span>
+            </div>
         </div>
 
-        <div class="detalle-body">
-
-            <div class="clase1">
-                <h3>datos </h3>
-                <p><strong>DNI:</strong> @integrante.DNI</p>
-                <p><strong>Fecha de nacimiento:</strong> @integrante.FechaNacimiento.ToShortDateString()</p>
+        <div class="secciones">
+            <div class="seccion">
+                <h3>Datos personales</h3>
+                <p><span class="etiqueta">Nombre</span> @integrante.Nombre</p>
+                <p><span class="etiqueta">DNI</span> @integrante.DNI</p>
+                <p><span class="etiqueta">Nacimiento</span> @integrante.FechaNacimiento.ToShortDateString()</p>
             </div>
 
-            <div class="clase1">
-                <h3> familias</h3>
+            <div class="seccion">
+                <h3>Familia</h3>
                 <ul>
                     @foreach (var f in integrante.Familiares)
                     {
@@ -32,8 +35,8 @@
                 </ul>
             </div>
 
-            <div class="clase1">
-                <h3>intereses</h3>
+            <div class="seccion">
+                <h3>Intereses</h3>
                 <ul>
                     @foreach (var i in integrante.Intereses)
                     {
@@ -41,9 +44,8 @@
                     }
                 </ul>
             </div>
-
         </div>
 
-        <a class="clasevolver" href='@Url.Action("Index", "Home")'>⬅ Volver al grupo</a>
+        <a class="btn-volver" href='@Url.Action("Index", "Home")'>← Volver al grupo</a>
     </div>
 }

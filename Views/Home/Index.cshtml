@@ -1,48 +1,30 @@
-﻿<!-- @{
-    ViewData["Title"] = "Grupo";
-    var integrantes = ViewBag.Integrantes as Dictionary<int,Integrante>;
-}
-
-<link rel="stylesheet" href="~/css/site.css" />
-
-<div class="container">
-    <h1 class="titulo">💻 Grupo Programación</h1>
-
-    <div class="grid">
-        @foreach (var item in integrantes.Values)
-        {
-            <div class="card">
-                <img src="@item.Foto" class="foto" />
-                <h2>@item.Nombre</h2>
-
-                <a href='@Url.Action("SelectIntegrante", "Home", new { dni = item.DNI })'>
-                    Ver más
-                </a>
-            </div>
-        }
-    </div>
-</div> -->
-
-@using Tp01.Models
+﻿@using Tp01.Models
 @{
-    ViewData["Title"] = "Grupo";
+    ViewData["Title"] = "Nuestro Grupo";
+    var integrantes = ViewBag.Integrantes as Dictionary<int, Integrante>;
 }
 
 <link rel="stylesheet" href="~/css/site.css" />
 
-<div class="container">
-    <h1 class="titulo">Grupo </h1>
+<div class="pagina">
+    <header class="encabezado">
+        <div class="logo-grupo">Tp01</div>
+        <div>
+            <h1>El mejor grupo de toda programacion</h1>
+            <p class="subtitulo">Vamos binker por nuestra S</p>
+        </div>
+    </header>
 
-    <div class="grid">
+    <div class="grilla">
         @if (integrantes != null)
         {
             @foreach (var item in integrantes.Values)
             {
-                <div class="card">
-                    <img src="@item.Foto" class="foto" />
+                <div class="tarjeta">
+                    <img src="@item.Foto" class="foto-chiquita" alt="Foto de @item.Nombre" />
                     <h2>@item.Nombre</h2>
-                    <a href='@Url.Action("SelectIntegrante", "Home", new { dni = item.DNI })'>
-                        Ver más
+                    <a class="btn-ver" href='@Url.Action("SelectIntegrante", "Home", new { dni = item.DNI })'>
+                        Ver perfil
                     </a>
                 </div>
             }
