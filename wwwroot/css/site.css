@@ -27,7 +27,7 @@ h3 { font-size: 1rem; font-weight: 700; color: #000000; margin-bottom: 0.6rem; }
     text-align: center;
 }
 
-.foto-chica {
+.foto-chiquita {
     width: 90px;
     height: 90px;
     border-radius: 50%;
@@ -85,3 +85,7 @@ h3 { font-size: 1rem; font-weight: 700; color: #000000; margin-bottom: 0.6rem; }
 }
 
 .btn-volver:hover { text-decoration: underline; }
+footer{
+    position: fixed;
+  bottom: 0;
+}
